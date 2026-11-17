@@ -1,0 +1,14 @@
+[project]
+name = "control-polizas"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "flask",
+    "pandas",
+    "openpyxl",
+    "pdfplumber",
+    "fpdf2",
+]
+
+[tool.uv]
+dev-dependencies = []

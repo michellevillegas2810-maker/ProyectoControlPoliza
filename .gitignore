@@ -1,1 +1,10 @@
 .DS_Store
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+uv.lock
+prueba_laura.pdf
+*.pdf
+!data/**/*.pdf

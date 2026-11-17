@@ -1,0 +1,270 @@
+/* public/static/estilos.css
+   Diseno limpio: rojo #AE1800, negro #201E1D, gris claro #F3F2F2. Responsive para celular. */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #F3F2F2;
+    color: #201E1D;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+/* ---------- Cabecera ---------- */
+.cabecera {
+    background-color: #AE1800;
+    color: white;
+    padding: 20px;
+    border-bottom: 4px solid #201E1D;
+}
+
+.contenido-cabecera {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.cabecera h1 {
+    margin: 0 0 8px 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.fecha-corte {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.95;
+}
+
+/* ---------- Contenido principal ---------- */
+.contenido {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #201E1D;
+}
+
+h3 {
+    font-size: 16px;
+    margin-top: 25px;
+    margin-bottom: 12px;
+    color: #AE1800;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+/* ---------- Tarjetas contadores ---------- */
+.tarjetas {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.tarjeta {
+    padding: 20px 15px;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    flex: 1;
+    min-width: 140px;
+}
+
+.tarjeta.vigente { background-color: #201E1D; }
+.tarjeta.por-vencer { background-color: #AE1800; }
+.tarjeta.vencida { background-color: #AE1800; }
+
+.tarjeta h3 {
+    margin: 0 0 8px 0;
+    font-size: 15px;
+    color: white;
+    border: none;
+    padding: 0;
+}
+
+.tarjeta p {
+    margin: 0;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* ---------- Boton descargar ---------- */
+.acciones {
+    margin-bottom: 25px;
+}
+
+.btn-descargar {
+    display: inline-block;
+    background-color: #AE1800;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-descargar:hover {
+    background-color: #201E1D;
+}
+
+/* ---------- Paneles ---------- */
+.panel {
+    background: white;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+}
+
+.panel ul {
+    margin: 10px 0 0 0;
+    padding-left: 20px;
+}
+
+.panel li {
+    margin-bottom: 6px;
+}
+
+/* ---------- Tabla ---------- */
+.tabla-polizas {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    font-size: 13px;
+}
+
+.tabla-polizas th,
+.tabla-polizas td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.tabla-polizas th {
+    background-color: #F3F2F2;
+    color: #201E1D;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.tabla-polizas tr.fila-vencida {
+    background-color: #fdecea; /* rojo claro */
+}
+
+.tabla-polizas tr.fila-por-vencer {
+    background-color: #fdf3e3; /* ámbar claro */
+}
+
+/* ---------- Estados ---------- */
+.estado-vigente { color: green; font-weight: bold; }
+.estado-por-vencer { color: #b35900; font-weight: bold; }
+.estado-vencida { color: #c00000; font-weight: bold; }
+
+/* ---------- Etiquetas especiales ---------- */
+.etiqueta-no-maestro {
+    color: #c00000;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.etiqueta-sin-prima {
+    color: #c00000;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* ---------- Enlaces ---------- */
+a {
+    color: #AE1800;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Pie de pagina ---------- */
+.pie {
+    background-color: #201E1D;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 12px;
+    margin-top: 30px;
+}
+
+/* ---------- Responsive: celular ---------- */
+@media (max-width: 768px) {
+    .contenido {
+        padding: 0 10px;
+        margin: 15px auto;
+    }
+
+    .cabecera {
+        padding: 15px;
+    }
+
+    .cabecera h1 {
+        font-size: 18px;
+    }
+
+    .fecha-corte {
+        font-size: 12px;
+    }
+
+    .tarjetas {
+        flex-direction: column;
+    }
+
+    .tabla-polizas {
+        font-size: 11px;
+    }
+
+    .tabla-polizas th,
+    .tabla-polizas td {
+        padding: 6px 4px;
+    }
+
+    h3 {
+        font-size: 14px;
+        margin-top: 18px;
+    }
+
+    .btn-descargar {
+        width: 100%;
+        text-align: center;
+        padding: 14px 0;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tabla-polizas {
+        font-size: 10px;
+    }
+
+    .tabla-polizas th,
+    .tabla-polizas td {
+        padding: 5px 3px;
+    }
+
+    .tarjeta p {
+        font-size: 24px;
+    }
+}

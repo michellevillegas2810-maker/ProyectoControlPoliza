@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<h2>Tablero de Polizas</h2>
+
+<div class="contadores">
+    <div class="contador vigente">
+        <h3>Vigentes</h3>
+        <p>{{ contadores.Vigente }}</p>
+    </div>
+    <div class="contador por-vencer">
+        <h3>Por vencer</h3>
+        <p>{{ contadores["Por vencer"] }}</p>
+    </div>
+    <div class="contador vencida">
+        <h3>Vencidas</h3>
+        <p>{{ contadores.Vencida }}</p>
+    </div>
+</div>
+
+<h3>Primas por aseguradora (polizas no vencidas)</h3>
+<ul>
+    {% for aseguradora, monto in primas.items() %}
+    <li>{{ aseguradora }}: CRC {{ "{:,.2f}".format(monto) }}</li>
+    {% endfor %}
+</ul>
+
+<h3>Inconsistencias</h3>
+<ul>
+    {% for inc in inconsistencias %}
+    <li>{{ inc.mensaje }}</li>
+    {% endfor %}
+</ul>
+
+<h3>Tabla de polizas (urgentes primero)</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Numero</th>
+            <th>Aseguradora</th>
+            <th>Tomador / Asegurado</th>
+            <th>Cedula</th>
+            <th>Vigencia hasta</th>
+            <th>Estado</th>
+            <th>Dias</th>
+            <th>Accion</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in polizas %}
+        <tr>
+            <td>{{ p["Numero de poliza"] }}</td>
+            <td>{{ p["Aseguradora"] }}</td>
+            <td>{{ p["Tomador / Asegurado"] }}</td>
+            <td>{{ p["Cedula"] }}</td>
+            <td>{{ p["Vigencia hasta"] }}</td>
+            <td class="estado-{{ p.Estado|lower|replace(' ', '-') }}">{{ p.Estado }}</td>
+            <td>{{ p["Dias para vencer"] if p["Dias para vencer"] is not none else "-" }}</td>
+            <td>
+                {% if p.Estado != "Vigente" %}
+                <a href="{{ url_for('polizas.aviso', numero=p["Numero de poliza']) }}">Ver aviso</a>
+                {% else %}
+                -
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<p><a href="{{ url_for('polizas.descargar_avisos') }}">Descargar todos los avisos (.zip)</a></p>
+{% endblock %}
