@@ -7,7 +7,7 @@ from datetime import date, timedelta
 from models.datos import cargar_clientes, cargar_polizas
 
 # Variables de negocio (constantes)
-FECHA_CORTE = date(2026, 11, 9)
+FECHA_CORTE = date(2026, 11, 2)
 DIAS_AVISO = 30
 
 

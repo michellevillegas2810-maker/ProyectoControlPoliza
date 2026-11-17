@@ -79,9 +79,9 @@ h3 {
     min-width: 140px;
 }
 
-.tarjeta.vigente { background-color: #201E1D; }
-.tarjeta.por-vencer { background-color: #AE1800; }
-.tarjeta.vencida { background-color: #AE1800; }
+.tarjeta.vigente { background-color: #4facfe; }      /* celeste claro */
+.tarjeta.por-vencer { background-color: #00c6fb; }   /* celeste medio */
+.tarjeta.vencida { background-color: #0077be; }      /* azul celeste fuerte */
 
 .tarjeta h3 {
     margin: 0 0 8px 0;
@@ -119,6 +119,60 @@ h3 {
     background-color: #201E1D;
 }
 
+/* ---------- Botones superiores ---------- */
+.btn-importar {
+    display: inline-block;
+    background-color: #4facfe;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.btn-importar:hover {
+    background-color: #00c6fb;
+}
+
+.btn-generar {
+    display: inline-block;
+    background-color: #00c6fb;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.btn-generar:hover {
+    background-color: #0077be;
+}
+
+.btn-avisos {
+    display: inline-block;
+    background-color: #0077be;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-avisos:hover {
+    background-color: #005f9e;
+}
+
 /* ---------- Paneles ---------- */
 .panel {
     background: white;
@@ -131,6 +185,17 @@ h3 {
 .panel ul {
     margin: 10px 0 0 0;
     padding-left: 20px;
+}
+
+/* Fondos de paneles como en la imagen */
+.panel.primas {
+    background-color: #F3F2F2;   /* gris claro */
+    border: 1px solid #ddd;
+}
+
+.panel.inconsistencias {
+    background-color: #fdecea;   /* rojo muy claro / rosa */
+    border: 1px solid #f5c6c6;
 }
 
 .panel li {
